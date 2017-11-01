@@ -1,3 +1,7 @@
+#!/bin/bash
+if [ -n "$1" ]
+then
+
 #Create dir for our file
 mkdir -p ~/laba3image
 
@@ -9,3 +13,9 @@ echo 'FROM vulnerables/web-dvwa' > ~/laba3image/Dockerfile
 echo 'RUN touch /etc/mysecret' >> ~/laba3image/Dockerfile
 echo 'RUN echo ' $1 ' > /etc/mysecret' >> ~/laba3image/Dockerfile
 echo 'EXPOSE 80' >> ~/laba3image/Dockerfile
+
+docker build -t laba3image/web-dvwa ~/laba3image
+
+else
+echo "No parameters found. "
+fi
