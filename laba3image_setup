@@ -16,6 +16,8 @@ echo 'EXPOSE 80' >> ~/laba3image/Dockerfile
 
 docker build -t laba3image/web-dvwa ~/laba3image
 
+rm -rf ~/laba3image
+
 else
 echo "No parameters found. "
 fi
